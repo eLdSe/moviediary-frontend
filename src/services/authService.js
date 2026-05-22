@@ -1,5 +1,6 @@
 const AUTH_URL = import.meta.env.VITE_API_URL.replace('/movie', '/auth')
 
+console.log('API URL:', import.meta.env.VITE_API_URL)
 class AuthService {
 
   login = async (username, password) => {
@@ -10,7 +11,7 @@ class AuthService {
     })
     console.log(res)
     const data = await res.json()
-    localStorage.setItem('token', data.token) 
+    localStorage.setItem('token', data.token)
     return data
   }
 
