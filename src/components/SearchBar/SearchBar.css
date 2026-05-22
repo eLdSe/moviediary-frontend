@@ -1,0 +1,104 @@
+.toolbar {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #4a5568;
+  pointer-events: none;
+}
+.search-input {
+  width: 100%;
+  background: rgba(22,22,30,0.7);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  padding: 11px 14px 11px 44px;
+  font-size: 14px;
+  color: #e2e8f0;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: 'Outfit', sans-serif;
+  backdrop-filter: blur(8px);
+  box-sizing: border-box;
+}
+.search-input::placeholder { color: #3a3a50; }
+.search-input:focus {
+  border-color: rgba(168,85,247,0.5);
+  box-shadow: 0 0 0 3px rgba(168,85,247,0.08);
+}
+
+.status-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.status-tab {
+  background: rgba(22,22,30,0.6);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 9px 16px;
+  font-size: 13px;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(8px);
+  white-space: nowrap;
+}
+.status-tab:hover { border-color: rgba(168,85,247,0.4); color: #a78bfa; }
+.status-tab.active {
+  background: rgba(124,58,237,0.15);
+  border-color: rgba(168,85,247,0.5);
+  color: #c084fc;
+  font-weight: 600;
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .toolbar {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .search-wrap {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .search-input {
+    font-size: 16px; /* предотвращает зум на iOS при фокусе */
+  }
+
+  .status-tabs {
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+
+  .status-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .status-tab {
+    flex-shrink: 0;
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+}

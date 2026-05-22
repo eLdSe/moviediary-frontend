@@ -1,0 +1,16 @@
+/* LoginPage — мобильная адаптация */
+@media (max-width: 480px) {
+  /* Уменьшаем padding карточки на маленьких экранах */
+  [data-page="login"] .auth-card,
+  [data-page="register"] .auth-card {
+    padding: 28px 20px 24px;
+  }
+}
+
+/* Глобальный фикс для страниц авторизации:
+   input на iOS не должен вызывать зум — принудительно 16px */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  font-size: max(16px, 1em);
+}
