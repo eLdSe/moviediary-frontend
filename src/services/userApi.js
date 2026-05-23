@@ -1,4 +1,4 @@
-const BASE_URL = import.meta.env.VITE_API_URL.replace('/movie', '/user')
+const BASE_URL = `${import.meta.env.VITE_API_URL}/user`
 
 const authHeader = () => ({
   'Content-Type': 'application/json',

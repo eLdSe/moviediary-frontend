@@ -1,4 +1,4 @@
-const AUTH_URL = import.meta.env.VITE_API_URL.replace('/movie', '/auth')
+const AUTH_URL = `${import.meta.env.VITE_API_URL}/auth`
 
 console.log('API URL:', import.meta.env.VITE_API_URL)
 class AuthService {
