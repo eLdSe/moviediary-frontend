@@ -1,6 +1,5 @@
-const AUTH_URL = `${import.meta.env.VITE_API_URL}/auth`
+const AUTH_URL = `/api/auth`
 
-console.log('API URL:', import.meta.env.VITE_API_URL)
 class AuthService {
 
   login = async (username, password) => {
@@ -9,7 +8,6 @@ class AuthService {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password })
     })
-    console.log(res)
     const data = await res.json()
     localStorage.setItem('token', data.token)
     return data
